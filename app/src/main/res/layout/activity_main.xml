@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+
+   <android.support.design.widget.AppBarLayout
+       android:layout_width="match_parent"
+       android:id="@+id/main_appbar"
+       android:layout_height="@dimen/normal_appbar_height"
+       android:fitsSystemWindows="true"
+      >
+
+
+      <android.support.design.widget.CollapsingToolbarLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:contentScrim="@color/toolbar_content_color"
+          app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="#000000">
+
+            <View
+                android:id="@+id/round_discover"
+                android:layout_width="300dp"
+                android:layout_height="290dp"
+                style="@style/collesping_styple"
+                android:fitsSystemWindows="true" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/default_text_minwidth"
+                android:lines="2"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_large"
+                android:textAllCaps="false"
+                android:textColor="@color/white_text"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+         </RelativeLayout>
+
+         <android.support.v7.widget.Toolbar
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             app:layout_collapseMode="pin"
+             android:id="@+id/tlb"
+             />
+
+
+      </android.support.design.widget.CollapsingToolbarLayout>
+
+   </android.support.design.widget.AppBarLayout>
+
+
+
+      <android.support.v7.widget.RecyclerView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/rv_food_item_list"
+          android:layout_marginTop="-80dp"
+          app:layout_anchor="@id/main_appbar"
+          app:layout_behavior="@string/appbar_scrolling_view_behavior"
+          />
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
