@@ -20,6 +20,7 @@
                 android:layout_height="match_parent"
                 android:foreground="@color/image_dark"
                 android:scaleType="centerCrop"
+                android:id="@+id/resturants_image"
                 android:src="@drawable/coffee" />
 
             <RelativeLayout

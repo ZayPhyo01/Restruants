@@ -2,11 +2,16 @@ package com.padc.hms.restruants.Activity;
 
 import android.content.Intent;
 import android.net.NetworkInfo;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -21,6 +26,7 @@ RecyclerView foodItemList;
 android.support.v7.widget.Toolbar toolbar;
 TextView title;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +39,19 @@ TextView title;
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         foodItemList.setLayoutManager(layoutManager);
         foodItemList.setAdapter(foodAdapter);
+
         title.setText(" Discover \n Resturants");
 
     }
+    /*   ActivityOptionsCompat activityOptions = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
+                    new Pair(ivAttraction, getString(R.string.detail_transition_name)));
+            ActivityCompat.startActivity(this, intent, activityOptions.toBundle());*/
 
     @Override
-    public void onTap() {
+    public void onTap(ImageView imageView) {
+        ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this,new Pair(imageView,"image"));
         Intent intent = DetialItem.newIntent(this);
-        startActivity(intent);
+        ActivityCompat.startActivity(this,intent,activityOptionsCompat.toBundle());
     }
 
     @Override

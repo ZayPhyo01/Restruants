@@ -21,6 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
+                android:id="@+id/resturants_image"
                 android:src="@drawable/coffee" />
 
             <android.support.v7.widget.Toolbar
